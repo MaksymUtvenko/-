@@ -14,7 +14,7 @@ function App() {
   const music = useAmbientMusic()
 
   return (
-    <div className="min-h-screen overflow-hidden bg-night text-slate-100">
+    <div className="min-h-screen overflow-x-hidden bg-night text-slate-100">
       <StarBackground />
       <MusicToggle enabled={music.enabled} onToggle={music.toggle} />
 
