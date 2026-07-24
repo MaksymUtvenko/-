@@ -33,17 +33,17 @@ export const sliderPhotos = [
   {
     caption: 'Я',
     image:
-      'https://images.unsplash.com/photo-1481841580057-e2b9927a05c6?auto=format&fit=crop&w=1400&q=80',
+      'https://cdn.phototourl.com/free/2026-07-23-5c44f437-fefa-46d6-888b-6748128ecfed.jpg',
   },
   {
     caption: 'Тебя',
     image:
-      'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=1400&q=80',
+      'https://cdn.phototourl.com/free/2026-07-23-99fc7cae-ae06-4e4c-9a8b-17ed3de9066d.jpg',
   },
   {
     caption: 'Люблю',
     image:
-      'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1400&q=80',
+      'https://cdn.phototourl.com/free/2026-07-23-a6ae2190-4b8c-4011-9f06-bc482a6c7305.jpg',
   },
 ]
 
@@ -55,7 +55,7 @@ export const secretMessages = [
 
 export const defaultLetter = `Любимая,
 
-Этот текст можно заменить на ваше настоящее письмо.
+
 
 Спасибо тебе за этот год: за нежность, терпение, смех, поддержку и за то, что рядом с тобой каждый день это новые приключения.
 
@@ -64,4 +64,4 @@ export const defaultLetter = `Любимая,
 Я хочу беречь нас, выбирать тебя снова и снова, и однажды перечитать это письмо вместо с тобой уже со словами и улыбкой: "вспомним, почему я не спал ночами".`
 
 export const defaultPuzzleImage =
-  'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80'
+  'https://cdn.phototourl.com/free/2026-07-23-e587faa3-77a2-40f9-81fe-17772bdf47ff.jpg'

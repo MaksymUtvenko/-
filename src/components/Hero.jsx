@@ -71,13 +71,13 @@ function Hero() {
           <img
             alt="Романтический placeholder"
             className="h-full w-full object-cover"
-            src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1100&q=80"
+            src="https://cdn.phototourl.com/free/2026-07-23-1a6af7ab-2db8-4c3b-b486-e5d033456aee.png"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-night/80 via-night/10 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4 rounded-lg border border-white/10 bg-night/72 p-4 backdrop-blur-md">
             <p className="text-sm font-semibold text-white"></p>
             <p className="mt-1 text-sm leading-6 text-slate-300">
-              Моя зайка❤️.
+              Моя зайка❤️
             </p>
           </div>
         </motion.div>

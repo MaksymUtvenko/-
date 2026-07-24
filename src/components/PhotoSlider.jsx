@@ -24,8 +24,7 @@ function PhotoSlider() {
   return (
     <section className="section-shell" id="photos">
       <SectionTitle eyebrow="Фото" title="Моменты, в которые хочется вернуться">
-        Замени ссылки в данных на ваши фотографии и подпиши каждый момент своим
-        голосом.
+        Это тебе напоминание
       </SectionTitle>
 
       <motion.div

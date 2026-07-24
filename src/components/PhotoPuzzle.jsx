@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import confetti from 'canvas-confetti'
 import { motion } from 'framer-motion'
-import { Grid2X2, ImagePlus, RotateCcw } from 'lucide-react'
+import { Grid2X2, RotateCcw } from 'lucide-react'
 import { defaultPuzzleImage } from '../data/siteData'
 import SectionTitle from './SectionTitle'
 
@@ -24,12 +24,10 @@ const shufflePieces = (size) => {
 
 function PhotoPuzzle() {
   const [gridSize, setGridSize] = useState(3)
-  const [imageUrl, setImageUrl] = useState(defaultPuzzleImage)
   const [pieces, setPieces] = useState(() => shufflePieces(3))
   const [selectedIndex, setSelectedIndex] = useState(null)
   const [solved, setSolved] = useState(false)
   const draggedIndex = useRef(null)
-  const uploadedUrl = useRef(null)
 
   const gridTemplate = useMemo(
     () => ({
@@ -75,23 +73,6 @@ function PhotoPuzzle() {
     swapPieces(selectedIndex, index)
   }
 
-  const handleUpload = (event) => {
-    const file = event.target.files?.[0]
-
-    if (!file) {
-      return
-    }
-
-    if (uploadedUrl.current) {
-      URL.revokeObjectURL(uploadedUrl.current)
-    }
-
-    const nextUrl = URL.createObjectURL(file)
-    uploadedUrl.current = nextUrl
-    setImageUrl(nextUrl)
-    resetPuzzle()
-  }
-
   useEffect(() => {
     const isSolved = pieces.every((piece, position) => piece === position)
     setSolved(isSolved)
@@ -106,20 +87,10 @@ function PhotoPuzzle() {
     }
   }, [pieces])
 
-  useEffect(
-    () => () => {
-      if (uploadedUrl.current) {
-        URL.revokeObjectURL(uploadedUrl.current)
-      }
-    },
-    [],
-  )
-
   return (
     <section className="section-shell" id="puzzle">
       <SectionTitle eyebrow="Пазл" title="Собери наше фото">
-        Загрузи общий снимок, выбери сетку и собери изображение обратно из
-        перемешанных кусочков.
+        Выбери сетку и собери изображение обратно из перемешанных кусочков.
       </SectionTitle>
 
       <motion.div
@@ -131,21 +102,14 @@ function PhotoPuzzle() {
       >
         <div className="mb-6 space-y-5 lg:mb-0">
           <div className="overflow-hidden rounded-lg border border-white/10">
-            <img alt="Фото для пазла" className="h-72 w-full object-cover" src={imageUrl} />
+            <img
+              alt="Фото для пазла"
+              className="h-72 w-full object-cover"
+              src={defaultPuzzleImage}
+            />
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <label className="soft-button cursor-pointer">
-              <ImagePlus aria-hidden="true" size={18} />
-              Загрузить фото
-              <input
-                accept="image/*"
-                className="sr-only"
-                onChange={handleUpload}
-                type="file"
-              />
-            </label>
-
             <button className="ghost-button" onClick={() => resetPuzzle()} type="button">
               <RotateCcw aria-hidden="true" size={18} />
               Перемешать
@@ -198,7 +162,7 @@ function PhotoPuzzle() {
                   }}
                   onDrop={() => swapPieces(draggedIndex.current, index)}
                   style={{
-                    backgroundImage: `url("${imageUrl}")`,
+                    backgroundImage: `url("${defaultPuzzleImage}")`,
                     backgroundPosition: `${x}% ${y}%`,
                     backgroundSize: `${gridSize * 100}% ${gridSize * 100}%`,
                   }}

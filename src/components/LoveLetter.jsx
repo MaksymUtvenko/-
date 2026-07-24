@@ -74,16 +74,6 @@ function LoveLetter() {
           viewport={{ once: true, amount: 0.35 }}
           whileInView={{ opacity: 1, x: 0 }}
         >
-          <label className="mb-3 block text-sm font-bold text-cyan" htmlFor="letter">
-            Текст письма
-          </label>
-          <textarea
-            className="min-h-40 w-full resize-y rounded-lg border border-white/10 bg-night/70 p-4 text-sm leading-7 text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan/70 focus:ring-2 focus:ring-cyan/30"
-            id="letter"
-            onChange={(event) => setCustomText(event.target.value)}
-            placeholder="Напиши здесь свое письмо. Если оставить поле пустым, будет показан placeholder-текст."
-            value={customText}
-          />
 
           <div className="mt-5 min-h-72 rounded-lg border border-white/10 bg-night/60 p-5">
             <pre className="whitespace-pre-wrap font-sans text-sm leading-7 text-slate-200 sm:text-base">
